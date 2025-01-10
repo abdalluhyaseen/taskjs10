@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 4</title>
+  </head>
+  <body>
+    <script>
+      function Average(jsonObject, Name) {
+        const array = jsonObject.data;
+        const total = array.reduce((sum, item) => sum + item[Name], 0);
+        return total / array.length;
+      }
+      const students = {
+        data: [
+          { name: "Ali", grade: 85 },
+          { name: "Sara", grade: 90 },
+          { name: "Ahmed", grade: 78 },
+          { name: "Laila", grade: 92 },
+        ],
+      };
+      const averageGrade = Average(students, "grade");
+      console.log("Average Grade:", averageGrade);
+    </script>
+  </body>
+</html>

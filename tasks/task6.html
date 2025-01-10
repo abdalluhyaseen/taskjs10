@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 6</title>
+  </head>
+  <body>
+    <script>
+      const cities = {
+        data: [
+          { name: "Tokyo", population: 37400068, country: "Japan" },
+          { name: "Shanghai", population: 26317104, country: "China" },
+          { name: "Delhi", population: 29399141, country: "India" },
+          { name: "São Paulo", population: 21846507, country: "Brazil" },
+          { name: "Cairo", population: 20076002, country: "Egypt" },
+        ],
+      };
+      function getCitiesByPopulation(jsonObject) {
+        return jsonObject.data
+          .sort((a, b) => b.population - a.population)
+          .map((city) => city.name);
+      }
+      console.log(getCitiesByPopulation(cities));
+    </script>
+  </body>
+</html>

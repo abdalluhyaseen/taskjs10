@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 7</title>
+  </head>
+  <body>
+    <script>
+      function calculateTotalRevenue(jsonObject) {
+        return jsonObject.products.reduce((total, product) => {
+          return total + product.price * product.quantity;
+        }, 0);
+      }
+      const products = {
+        products: [
+          { name: "Laptop", price: 1000, quantity: 5 },
+          { name: "Smartphone", price: 700, quantity: 10 },
+          { name: "Headphones", price: 100, quantity: 20 },
+          { name: "Monitor", price: 300, quantity: 7 },
+        ],
+      };
+      console.log(calculateTotalRevenue(products));
+    </script>
+  </body>
+</html>

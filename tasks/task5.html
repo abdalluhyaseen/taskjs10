@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 5</title>
+  </head>
+  <body>
+    <script>
+      function sortByProperty(jsonObject, propertyName) {
+        const array = jsonObject.data;
+        return array.sort((a, b) => b[propertyName] - a[propertyName]);
+      }
+
+      const students = {
+        data: [
+          { name: "Ali", grade: 85 },
+          { name: "Sara", grade: 90 },
+          { name: "Ahmed", grade: 78 },
+          { name: "Laila", grade: 92 },
+        ],
+      };
+
+      console.log(sortByProperty(students, "grade"));
+    </script>
+  </body>
+</html>
