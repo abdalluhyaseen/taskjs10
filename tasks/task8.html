@@ -7,12 +7,19 @@
   </head>
   <body>
     <script>
-      let my1 =
-        '{"name" : "abdalluh","age" : 27,"email" : "abdalluhyaseen.com"}';
-      let jsonjs = JSON.parse(my1);
-      console.log(jsonjs);
-      let josn = JSON.stringify(jsonjs);
-      console.log(josn);
+      let apiurl = `https://api.github.com/users/abdalluhyaseen/repos`;
+      let fatchData = fetch(apiurl);
+      fatchData
+        .then((Response) => {
+          if (!Response.ok) {
+            throw "Failed to fatch data;";
+          }
+          return Response.json();
+        })
+        .then((data) => {
+          let reponame = data.map((repo) => repo.name);
+          console.log(reponame);
+        });
     </script>
   </body>
 </html>
