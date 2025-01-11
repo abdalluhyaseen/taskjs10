@@ -25,7 +25,7 @@
         ],
       };
       function receive(obj) {
-        return obj.library[2].title;
+        return obj.library.map(library => library.title);
       }
       console.log(receive(books));
     </script>
